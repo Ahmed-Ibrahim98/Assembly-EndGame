@@ -1,6 +1,6 @@
 export default function ResultBox({justDied, isGameOver, isGameWon, word}) {
     function getMessage(justDied, isGameOver, isGameWon, word) {
-        if (isGameOver) {
+        if (isGameOver && !isGameWon) {
             return (
                 <div className="banner banner-lose">
                     <h2>Game over!</h2>
