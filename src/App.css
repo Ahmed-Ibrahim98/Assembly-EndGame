@@ -1,0 +1,164 @@
+header {
+    width: 80%;
+    position: absolute;
+    top: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+header h1{
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+header p {
+    color: #bbbbbb;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.languages, .letters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the items on every row */
+    width: 80%;
+    margin: 0 auto; /* Centers the container itself */
+}
+
+
+.letters {
+    margin-top: 2rem;
+}
+
+.languages > div.language {
+    flex: 0 1 auto;
+    padding: 8px 16px;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    margin: 0.25rem;
+    position: relative;
+    /* Optional: if you want them to grow to fill space, use: flex: 1 1 100px; */
+}
+
+.languages > div.language.lost::after {
+    content: "💀";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.languages > div.language.lost {
+    opacity: 0.2;
+}
+
+.letters > div.letter {
+    flex: 0 1 auto;
+    width: 41px;
+    padding: 6px 12px;
+    font-size: 2rem;
+    background: #2c2c2c;
+    color: #dddddd;
+    border-bottom: 2px solid #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0.125rem;
+}
+.buttons {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 75%
+}
+.letter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #fcb322;
+    color: #222222;
+    margin: 0.25rem;
+    border: 1px solid #eeeeee;
+}
+
+.result-box {
+    width: 80%;
+    margin: 2rem auto;
+}
+
+/* Base styles for both banners */
+.banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 4px;
+    color: #ffffff;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    text-align: center;
+    min-width: 300px;
+    min-height: 100px;
+    margin: 10px 0;
+    border: none;
+    box-shadow: 0 2px 4px 0 rgb(255, 255, 255, 0.3);
+}
+
+.banner h2 {
+    margin: 0 0 4px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.banner p {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Specific Colors extracted from images */
+.banner-lose {
+    background-color: #ba2121; /* Red theme */
+}
+
+.banner-win {
+    background-color: #109856; /* Green theme */
+}
+
+.outed-message {
+    background-color: #7A5DC7; /* The specific purple shade */
+}
+
+.outed-message p {
+    margin: 0;
+    font-size: 1.1rem;
+    font-style: italic; /* Matches the italicized farewell text */
+    font-weight: 500;
+}
+
+.new-game {
+    margin-top: 2rem;
+    background: #12ACDF;
+    color: #333333;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 1.5rem;
+    min-width: 45%;
+}
+
+@media (min-width: 980px) {
+    .buttons {
+        width: 50%;
+    }
+    .result-box {
+        width: 40%;
+    }
+}
+
