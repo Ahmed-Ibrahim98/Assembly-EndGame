@@ -36,10 +36,14 @@ export default function App() {
             alive: index >= wrongGuessesCount
         })))
         if (wrongGuessesCount > 0){
+            // if the user made a wrong guess then get the next language in line to die and let him know
+            // this language is now dead
             setJustDied(languages[wrongGuessesCount - 1])
         }
     }, [wrongGuessesCount])
     function resetGame() {
+        // if the game is over then reset the game
+        // and reset all the states again
         setWord(randomWord())
         setGuessedLetters([])
         setLanguages(allLanguages)
@@ -49,7 +53,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <ResultBox justDied={justDied} isGameOver={isGameOver} isGameWon={isGameWon} word={word} />
+      <ResultBox justDied={justDied} isGameLost={isGameLost} isGameWon={isGameWon} word={word} />
       <LanguagesBox languages={languages} />
       <InputView word={word} guessedLetters={guessedLetters}/>
       <InputButtons 

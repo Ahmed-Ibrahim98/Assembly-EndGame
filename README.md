@@ -1,16 +1,27 @@
-# React + Vite
+# Assembly: Endgame
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A themed word-guessing game built with React. Guess the hidden word before your wrong guesses “eliminate” programming languages one by one — lose them all, and Assembly wins.
 
-Currently, two official plugins are available:
+## Live Demo
+https://assembly-endgame-my.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## How to Play
+- Click letters to guess the word.
+- Correct guesses reveal letters in the word.
+- Wrong guesses add a skull to a programming language.
+- Win by revealing the full word. Lose when all languages are eliminated.
 
-## React Compiler
+## Features
+- On-screen keyboard with correct/incorrect feedback
+- Language “elimination” system with farewell messages
+- Win state + loss state UI
+- Built as a React SPA
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
+- React + Vite
+- JavaScript / HTML / CSS
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Run Locally
+```bash
+npm install
+npm start

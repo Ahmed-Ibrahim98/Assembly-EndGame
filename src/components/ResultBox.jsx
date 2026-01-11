@@ -1,6 +1,8 @@
-export default function ResultBox({justDied, isGameOver, isGameWon, word}) {
-    function getMessage(justDied, isGameOver, isGameWon, word) {
-        if (isGameOver && !isGameWon) {
+export default function ResultBox({justDied, isGameLost, isGameWon, word}) {
+    function getMessage(justDied, isGameLost, isGameWon, word) {
+        // if the game is over and the user didn't win then display a message letting them know they lost
+        // if the user guessed incorrectly then display a message that a new language just died
+        if (isGameLost) {
             return (
                 <div className="banner banner-lose">
                     <h2>Game over!</h2>
@@ -12,6 +14,7 @@ export default function ResultBox({justDied, isGameOver, isGameWon, word}) {
         else if (justDied){
             return <div className={"banner outed-message"}><p>{justDied.message}</p></div>
         }
+        // if the user won then display a message letting them know they won
         if (isGameWon) {
             return (
                 <div className="banner banner-win">
@@ -24,7 +27,7 @@ export default function ResultBox({justDied, isGameOver, isGameWon, word}) {
 
     return (
         <section className={"result-box"}>
-            {getMessage(justDied, isGameOver, isGameWon, word)}
+            {getMessage(justDied, isGameLost, isGameWon, word)}
         </section>
     )
 }
