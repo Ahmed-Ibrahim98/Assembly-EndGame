@@ -12,7 +12,7 @@ import {useEffect, useState} from "react";
 import {checkGuess} from "./utils/match.js";
 
 export default function App() {
-    const [word, setWord] = useState(randomWord());
+    const [word, setWord] = useState(() => randomWord());
     const [languages, setLanguages] = useState(allLanguages);
     const [guessedLetters, setGuessedLetters] = useState([]);
     const [justDied, setJustDied] = useState(null)
