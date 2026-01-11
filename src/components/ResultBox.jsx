@@ -1,5 +1,5 @@
-export default function ResultBox({justDied, isGameLost, isGameWon, word}) {
-    function getMessage(justDied, isGameLost, isGameWon, word) {
+export default function ResultBox({justDied, isGameLost, isGameWon}) {
+    function getMessage(justDied, isGameLost, isGameWon) {
         // if the game is over and the user didn't win then display a message letting them know they lost
         // if the user guessed incorrectly then display a message that a new language just died
         if (isGameLost) {
@@ -7,7 +7,6 @@ export default function ResultBox({justDied, isGameLost, isGameWon, word}) {
                 /* role="alert" for high-priority game over message */
                 <div className="banner banner-lose" role="alert">
                     <h2>Game over!</h2>
-                    <p>The word was: <b>{word.toUpperCase()}</b></p>
                     <p>You lose! Better start learning Assembly 🫠</p>
                 </div>
             )
@@ -39,7 +38,7 @@ export default function ResultBox({justDied, isGameLost, isGameWon, word}) {
             aria-live="polite"
             role="status"
         >
-            {getMessage(justDied, isGameLost, isGameWon, word)}
+            {getMessage(justDied, isGameLost, isGameWon)}
         </section>
     )
 }

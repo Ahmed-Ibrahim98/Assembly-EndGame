@@ -54,9 +54,9 @@ export default function App() {
   return (
     <>
       <Header />
-      <ResultBox justDied={justDied} isGameLost={isGameLost} isGameWon={isGameWon} word={word} />
+      <ResultBox justDied={justDied} isGameLost={isGameLost} isGameWon={isGameWon} />
       <LanguagesBox languages={languages} />
-      <InputView word={word} guessedLetters={guessedLetters}/>
+      <InputView word={word} guessedLetters={guessedLetters} isGameLost={isGameLost}/>
       <InputButtons 
           word={word} 
           letters={letters} 
