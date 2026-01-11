@@ -1,9 +1,6 @@
 header {
     width: 80%;
-    position: absolute;
-    top: 4rem;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 4rem;
 }
 header h1{
     font-size: 2rem;
@@ -23,7 +20,7 @@ header p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Centers the items on every row */
-    width: 80%;
+    width: 100%;
     margin: 0 auto; /* Centers the container itself */
 }
 
@@ -58,14 +55,16 @@ header p {
 
 .letters > div.letter {
     flex: 0 1 auto;
-    width: 41px;
-    padding: 6px 12px;
-    font-size: 2rem;
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
     background: #2c2c2c;
     color: #dddddd;
     border-bottom: 2px solid #ffffff;
     text-transform: uppercase;
-    text-align: center;
     margin: 0.125rem;
 }
 .buttons {
@@ -73,10 +72,12 @@ header p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 75%
+    width: 90%;
 }
 .letter-btn {
-    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1rem;
     border-radius: 4px;
     cursor: pointer;
@@ -84,11 +85,17 @@ header p {
     color: #222222;
     margin: 0.25rem;
     border: 1px solid #eeeeee;
+    width: 40px;
+    height: 40px;
 }
 
 .result-box {
-    width: 80%;
-    margin: 2rem auto;
+    width: 100%;
+    margin: 1rem auto;
+    min-height: 120px; /* Provides breathing room even when empty */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Base styles for both banners */
@@ -102,9 +109,10 @@ header p {
     color: #ffffff;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     text-align: center;
-    min-width: 300px;
+    width: 100%;
+    max-width: 500px;
     min-height: 100px;
-    margin: 10px 0;
+    margin: 0 auto; /* Removed vertical margin since parent handles spacing */
     border: none;
     box-shadow: 0 2px 4px 0 rgb(255, 255, 255, 0.3);
 }
@@ -150,15 +158,26 @@ header p {
     cursor: pointer;
     border: none;
     font-size: 1.5rem;
-    min-width: 45%;
+    width: 500px;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 800px) {
     .buttons {
-        width: 50%;
+        max-width: 700px;
     }
     .result-box {
-        width: 40%;
+        max-width: 700px;
+    }
+    .languages {
+        max-width: 700px;
+    }
+    .new-game {
+        max-width: 500px;
     }
 }
 
+@media (max-width: 600px) {
+    .new-game {
+        max-width: 80%;
+    }
+}
