@@ -10,8 +10,11 @@ import InputButtons from './components/InputButtons.jsx'
 import NewGameButton from './components/NewGameButton.jsx'
 import {useEffect, useState} from "react";
 import {checkGuess} from "./utils/match.js";
+import Confetti from "react-confetti";
+import {useWindowSize} from "react-use";
 
 export default function App() {
+    const { width, height } = useWindowSize();
     const [word, setWord] = useState(() => randomWord());
     const [languages, setLanguages] = useState(allLanguages);
     const [guessedLetters, setGuessedLetters] = useState([]);
@@ -53,6 +56,11 @@ export default function App() {
 
   return (
     <>
+      {/* 
+          Confetti is rendered only when the game is won. 
+          The width and height are provided by useWindowSize to ensure it covers the entire viewport.
+      */}
+      {isGameWon && <Confetti width={width} height={height} recycle={false} numberOfPieces={800} />}
       <Header />
       <ResultBox justDied={justDied} isGameLost={isGameLost} isGameWon={isGameWon} />
       <LanguagesBox languages={languages} />
