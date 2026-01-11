@@ -7,7 +7,9 @@ export default function LetterButton({letter, onClick, isGuessed, isCorrect, isG
     // if the letter is already guessed or the game is over the button is disabled
     // if the letter is not guessed the button background color has the default color
     const styles = {
-        backgroundColor: isGuessed ? (isCorrect ? "#0ea051" : "#ea5342") : undefined
+        backgroundColor: isGuessed ? (isCorrect ? "#0ea051" : "#ea5342") : undefined,
+        opacity: isGameOver ? 0.5 : undefined,
+        cursor: isGameOver ? "not-allowed" : "pointer"
     }
 
     /* aria-label provides context for screen readers about the letter's state */
