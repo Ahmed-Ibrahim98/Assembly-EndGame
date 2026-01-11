@@ -1,7 +1,10 @@
 import CharBox from "./CharBox.jsx"
 export default function InputView({word, guessedLetters}) {
     return (
-        <section className={"letters"}>
+        <section 
+            className={"letters"}
+            aria-label={"Current word"}
+        >
             {word.split("").map((char, index) => {
                 // the guessedLetters is initially empty
                 // so the isGuessed check will always return false

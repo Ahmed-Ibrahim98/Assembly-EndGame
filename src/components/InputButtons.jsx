@@ -13,16 +13,11 @@ export default function InputButtons({letters, word, guessedLetters, setGuessedL
         }
     }
     return (
-        <section className={"buttons"}>
+        <section 
+            className={"buttons"}
+            aria-label={"Keyboard"}
+        >
             {letters.map(letter => {
-                // the guessedLetters is initially empty
-                // so the isGuessed check will always return false
-                // since the letter is not in the guessedLetters array
-                // and isCorrect will always return false
-                // when a button is clicked the letter is added to the guessedLetters array
-                // then all buttons are rerendered again
-                // by then the isGuessed check will return true for the button that was just clicked
-                // and the isCorrect check will return true if the letter is in the word
                 const isGuessed = guessedLetters.includes(letter)
                 const isCorrect = isGuessed && checkGuess(word, letter)
                 return (

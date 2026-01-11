@@ -1,5 +1,11 @@
 export default function CharBox({char}) {
+    const isRevealed = char !== ""
     return (
-        <div className={"letter"}><span>{char}</span></div>
+        <span 
+            className={"letter"}
+            aria-label={isRevealed ? `Letter: ${char.toUpperCase()}` : "Blank letter"}
+        >
+            {char.toUpperCase()}
+        </span>
     )
 }

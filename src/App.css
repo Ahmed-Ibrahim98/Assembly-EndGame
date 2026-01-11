@@ -29,7 +29,7 @@ header p {
     margin-top: 2rem;
 }
 
-.languages > div.language {
+.languages > span.language {
     flex: 0 1 auto;
     padding: 8px 16px;
     font-size: 1.1rem;
@@ -39,7 +39,7 @@ header p {
     /* Optional: if you want them to grow to fill space, use: flex: 1 1 100px; */
 }
 
-.languages > div.language.lost::after {
+.languages > span.language.lost::after {
     content: "💀";
     position: absolute;
     top: 50%;
@@ -49,11 +49,11 @@ header p {
     color: #ffffff;
 }
 
-.languages > div.language.lost {
+.languages > span.language.lost {
     opacity: 0.2;
 }
 
-.letters > div.letter {
+.letters > span.letter {
     flex: 0 1 auto;
     min-width: 40px;
     height: 40px;

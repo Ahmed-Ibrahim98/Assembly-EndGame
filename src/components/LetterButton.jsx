@@ -10,12 +10,17 @@ export default function LetterButton({letter, onClick, isGuessed, isCorrect, isG
         backgroundColor: isGuessed ? (isCorrect ? "#0ea051" : "#ea5342") : undefined
     }
 
+    const ariaLabel = isGuessed 
+        ? `${letter} - ${isCorrect ? "correct" : "incorrect"}` 
+        : `Guess letter ${letter}`
+
     return (
         <button 
             className={"letter-btn"} 
             onClick={onClick}
             disabled={isGuessed || isGameOver}
             style={styles}
+            aria-label={ariaLabel}
         >
             {letter}
         </button>
