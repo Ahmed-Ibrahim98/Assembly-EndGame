@@ -26,6 +26,7 @@ export default function App() {
     // if the game is won or lost then the game is over
     const isGameOver = isGameWon || isGameLost
 
+    // Update language statuses and identify recently "deceased" languages whenever wrongGuessesCount changes
     useEffect(() => {
         setLanguages(prevLanguages => prevLanguages.map((lang, index) => ({
             ...lang,

@@ -10,6 +10,7 @@ export default function LetterButton({letter, onClick, isGuessed, isCorrect, isG
         backgroundColor: isGuessed ? (isCorrect ? "#0ea051" : "#ea5342") : undefined
     }
 
+    /* aria-label provides context for screen readers about the letter's state */
     const ariaLabel = isGuessed 
         ? `${letter} - ${isCorrect ? "correct" : "incorrect"}` 
         : `Guess letter ${letter}`

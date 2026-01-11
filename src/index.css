@@ -11,14 +11,17 @@ body {
     text-align: center;
 }
 #root {
+    /* Ensure the root container takes at least the full viewport height */
     min-height: 100vh;
     width: 100%;
     display: flex;
+    /* Align items at the start to allow natural downward expansion/scrolling */
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     position: relative;
     z-index: 1;
     gap: 1rem;
+    /* Add padding for better spacing on smaller screens */
     padding: 1rem;
 }
